@@ -1,0 +1,179 @@
+{
+  "specName": "PUBLIC_GITHUB_DEFAULT",
+  "repositoryRequirements": {
+    "directoriesToSearch": {
+      "directoryPaths": [
+        "/",
+        "/docs",
+        "/.github"
+      ]
+    },
+    "requiredFiles": [
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/README.md"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                },
+                {
+                  "requirement": "MARKDOWN_FILE_HAS_TITLE_HEADING",
+                  "titleRegexPattern": "(?i)^(?!title$).*"
+                },
+                {
+                  "requirement": "MARKDOWN_FILE_HAS_DESCRIPTION_AFTER_TITLE"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/CONTRIBUTING.md"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/CODE_OF_CONDUCT.md"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/LICENSE.md"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/SUPPORT.md"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/.github/CODEOWNERS"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                },
+                {
+                  "requirement": "FILE_HAS_LINE_MATCHING",
+                  "regexPattern": "^\\s*\\*\\s+(\\S+@\\S+|@\\S+).*$"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/.github/ISSUE_TEMPLATE"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "DIRECTORY_NOT_EMPTY"
+                },
+                {
+                  "requirement": "DIRECTORY_CONTAINS_FILE_SATISFYING",
+                  "fileChecks": {
+                    "checks": [
+                      {
+                        "requirement": "FILE_HAS_YAML_FRONT_MATTER_PROPERTIES",
+                        "propertyNames": [
+                          "name",
+                          "about"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "requiredFileOptions": [
+          {
+            "fileToFind": {
+              "expectedFilePath": "/.github/PULL_REQUEST_TEMPLATE"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "DIRECTORY_NOT_EMPTY"
+                }
+              ]
+            }
+          },
+          {
+            "fileToFind": {
+              "expectedFilePath": "/.github/PULL_REQUEST_TEMPLATE.md"
+            },
+            "fileChecks": {
+              "checks": [
+                {
+                  "requirement": "FILE_NOT_EMPTY"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
