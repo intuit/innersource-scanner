@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.intuit.innersource</groupId>
+    <artifactId>aggregator</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>InnerSource Aggregator</name>
+    <url>https://www.github.com/intuit/innersource</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <jacoco.enabled>true</jacoco.enabled>
+        <skipTests>false</skipTests>
+    </properties>
+    
+    <modules>
+        <module>repository-scanner</module>
+        <module>innersource-maven-plugin</module>
+    </modules>
+</project>

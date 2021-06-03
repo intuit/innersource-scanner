@@ -1,0 +1,328 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://github.com/intuit/innerSourceReadinessSpecification.schema.json",
+  "type": "object",
+  "title": "The InnerSource Readiness Specification Schema",
+  "description": "TODO",
+  "required": [
+    "specName",
+    "repositoryRequirements"
+  ],
+  "definitions": {
+    "fileCheck": {
+      "type": "object",
+      "title": "The fileCheck schema",
+      "description": "TODO",
+      "required": [
+        "requirement"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "requirement": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "requirement": {
+                "const": "FILE_HAS_LINE_MATCHING"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "regexPattern"
+            ],
+            "properties": {
+              "regexPattern": {
+                "type": "string",
+                "title": "The regexPattern schema",
+                "description": "TODO"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requirement": {
+                "const": "DIRECTORY_CONTAINS_FILE_SATISFYING"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "fileChecks"
+            ],
+            "properties": {
+              "fileChecks": {
+                "$ref": "#/definitions/fileChecks",
+                "title": "The fileChecks schema",
+                "description": "TODO"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requirement": {
+                "const": "YAML_FILE_HAS_FRONT_MATTER_PROPERTIES"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "propertyNames"
+            ],
+            "properties": {
+              "propertyNames": {
+                "type": "array",
+                "title": "The propertyNames schema",
+                "description": "TODO",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requirement": {
+                "const": "MARKDOWN_FILE_HAS_TITLE_HEADING"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "titleRegexPattern"
+            ],
+            "properties": {
+              "titleRegexPattern": {
+                "type": "string",
+                "title": "The titleRegexPattern schema",
+                "description": "TODO"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requirement": {
+                "const": "MARKDOWN_FILE_HAS_HEADING"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "heading"
+            ],
+            "properties": {
+              "heading": {
+                "type": "string",
+                "title": "The heading schema",
+                "description": "TODO"
+              },
+              "synonyms": {
+                "type": "array",
+                "title": "The synonyms schema",
+                "description": "TODO",
+                "uniqueItems": true,
+                "default": [],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "matchCase": {
+                "type": "boolean",
+                "title": "The matchCase schema",
+                "description": "TODO",
+                "default": false
+              },
+              "matchIfSectionEmpty": {
+                "type": "boolean",
+                "title": "The matchIfSectionEmpty schema",
+                "description": "TODO",
+                "default": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "requirement": {
+                "const": "MARKDOWN_FILE_HAS_IMAGE"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "altText"
+            ],
+            "properties": {
+              "altText": {
+                "type": "string",
+                "title": "The altText schema",
+                "description": "TODO"
+              },
+              "altTextSynonyms": {
+                "type": "array",
+                "title": "The altTextSynonyms schema",
+                "description": "TODO",
+                "uniqueItems": true,
+                "default": [],
+                "items": {
+                  "type": "string"
+                }
+              },
+              "matchCase": {
+                "type": "boolean",
+                "title": "The matchCase schema",
+                "description": "TODO",
+                "default": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "fileChecks": {
+      "type": "object",
+      "title": "The fileChecks schema",
+      "description": "TODO",
+      "required": [
+        "checks"
+      ],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "title": "The checks schema",
+          "description": "TODO",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/fileCheck"
+          }
+        }
+      }
+    },
+    "fileToFind": {
+      "type": "object",
+      "title": "The fileToFind schema",
+      "description": "TODO",
+      "required": [
+        "expectedFilePath"
+      ],
+      "properties": {
+        "expectedFilePath": {
+          "type": "string",
+          "title": "The canonicalFilePath schema",
+          "description": "TODO",
+          "examples": [
+            "/README.md"
+          ]
+        }
+      }
+    },
+    "fileRequirements": {
+      "type": "object",
+      "title": "The fileRequirements schema",
+      "description": "TODO",
+      "required": [
+        "requiredFileOptions"
+      ],
+      "properties": {
+        "requiredFileOptions": {
+          "type": "array",
+          "title": "The requireFileOptions schema",
+          "description": "TODO",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/fileRequirementOption"
+          }
+        }
+      }
+    },
+    "fileRequirementOption": {
+      "type": "object",
+      "title": "The fileRequirementOption schema",
+      "description": "TODO",
+      "required": [
+        "fileToFind",
+        "fileChecks"
+      ],
+      "properties": {
+        "fileToFind": {
+          "$ref": "#/definitions/fileToFind"
+        },
+        "fileChecks": {
+          "$ref": "#/definitions/fileChecks"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "specName": {
+      "$id": "#/properties/specName",
+      "type": "string",
+      "title": "The specName schema",
+      "description": "TODO",
+      "examples": [
+        "MINIMAL_PROFILE"
+      ]
+    },
+    "repositoryRequirements": {
+      "$id": "#/properties/repositoryRequirements",
+      "type": "object",
+      "title": "The repositoryRequirements schema",
+      "description": "TODO",
+      "required": [
+        "directoriesToSearch",
+        "requiredFiles"
+      ],
+      "properties": {
+        "directoriesToSearch": {
+          "$id": "#/properties/repositoryRequirements/properties/directoriesToSearch",
+          "type": "object",
+          "title": "The directoriesToSearch schema",
+          "description": "TODO",
+          "required": [
+            "directoryPaths"
+          ],
+          "properties": {
+            "directoryPaths": {
+              "$id": "#/properties/repositoryRequirements/properties/directoriesToSearch/properties/directoryPaths",
+              "type": "array",
+              "title": "The directoryPaths schema",
+              "description": "TODO",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "requiredFiles": {
+          "$id": "#/properties/repositoryRequirements/properties/requiredFiles",
+          "type": "array",
+          "title": "The requiredFiles schema",
+          "description": "TODO",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/fileRequirements"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

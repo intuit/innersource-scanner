@@ -1,0 +1,1 @@
+![Code Coverage](https://build.server.com/coverageIcon)

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/intuit/innersource/main/scanner/src/main/resources/fixupFileTemplates.schema.json",
+  "type": "object",
+  "title": "The Fixup File Templates Specification Schema",
+  "description": "TODO",
+  "required": [
+    "emptyFileTemplates"
+  ],
+  "properties": {
+    "emptyFileTemplates": {
+      "$id": "#/properties/emptyFileTemplates",
+      "type": "object",
+      "title": "The emptyFileTemplates schema",
+      "description": "TODO",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
