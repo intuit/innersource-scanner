@@ -425,9 +425,9 @@ See [CHANGELOG.md](./CHANGELOG.md) for the latest version.
 
 ```xml
 <dependency>
-    <groupId>com.github.intuit.innersource</groupId>
-    <artifactId>repository-scanner</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.intuit.innersource</groupId>
+    <artifactId>innersource-repository-scanner</artifactId>
+    <version>0.0.1</version>
 </dependency>
 ```
 

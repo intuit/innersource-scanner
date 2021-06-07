@@ -19,9 +19,9 @@ Define the plugin in your `pom.xml`
 <build>
     <plugins>
         <plugin>
-            <groupId>com.github.intuit.innersource</groupId>
+            <groupId>com.intuit.innersource</groupId>
             <artifactId>innersource-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>0.0.1</version>
         </plugin>
     </plugins>
 </build>
@@ -48,9 +48,9 @@ the following configuration:
 <build>
     <plugins>
         <plugin>
-            <groupId>com.github.intuit.innersource</groupId>
+            <groupId>com.intuit.innersource</groupId>
             <artifactId>innersource-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>0.0.1</version>
             <configuration>
                 <repositoryRoot>..</repositoryRoot>            
             </configuration>
@@ -86,9 +86,9 @@ set the `failBuild` configuration property to true:
 <build>
     <plugins>
         <plugin>
-            <groupId>com.github.intuit.innersource</groupId>
+            <groupId>com.intuit.innersource</groupId>
             <artifactId>innersource-maven-plugin</artifactId>
-            <version>1.0.0</version>
+            <version>0.0.1</version>
             <configuration>   
                 <failBuild>true</failBuild>         
             </configuration>
@@ -101,5 +101,5 @@ Now if your repository is not inner source ready your build will
 fail with a warning similar to:
 
 ```
-Failed to execute goal com.github.intuit.innersource.mavenplugin:innersource-maven-plugin:1.0.0:scan (check-innersource-docs) on project maven-test: Project located at "/Users/mmadson/Documents/git/maven-test" is missing standard InnerSource documentation and "failBuild" property was set to true
+Failed to execute goal com.intuit.innersource.mavenplugin:innersource-maven-plugin:0.0.1:scan (check-innersource-docs) on project maven-test: Project located at "/Users/mmadson/Documents/git/maven-test" is missing standard InnerSource documentation and "failBuild" property was set to true
 ```
