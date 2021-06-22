@@ -29,12 +29,6 @@ jobs:
       with:
         jacoco-csv-file: innersource-repository-scanner/target/site/jacoco/jacoco.csv        
         coverage-badge-filename: scanner-coverage.svg
-    - name: Generate Test Coverage Badge for Maven Plugin Module
-      id: jacocoMod2
-      uses: cicirello/jacoco-badge-generator@v2
-      with:
-        jacoco-csv-file: innersource-maven-plugin/target/site/jacoco/jacoco.csv        
-        coverage-badge-filename: plugin-coverage.svg
     - name: Commit Test Coverage badges (if changed)
       run: |
         if [[ `git status --porcelain` ]]; then
