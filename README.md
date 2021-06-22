@@ -1,5 +1,6 @@
 
-[//]: # (Will add build status and code coverage badges following release)
+[![Build Status](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
+[![Test Coverage](https://github.com/intuit/innersource-scanner/blob/main/.github/badges/scanner-coverage.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
 
 <!-- Project Logo and Title -->
 <p align="center">
