@@ -6,7 +6,7 @@
             <password>${env.MAVEN_PASSWORD}</password>
         </server>
         <server>
-            <id>ossrh-gpg-key</id>
+            <id>${env.GPG_KEYID}</id>
             <passphrase>${env.GPG_PASSPHRASE}</passphrase>
         </server>
     </servers>
