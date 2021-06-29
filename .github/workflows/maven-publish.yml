@@ -60,7 +60,7 @@ jobs:
     - name: Commit Pom Version Changes Back to main branch
       uses: EndBug/add-and-commit@v7
       env:
-        GITHUB_TOKEN ${{ github.token }}
+        GITHUB_TOKEN: ${{ github.token }}
       with:
         branch: main
         message: 'Roll Pom Version'
