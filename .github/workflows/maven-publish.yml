@@ -28,7 +28,7 @@ jobs:
         server-password: MAVEN_PASSWORD
 
     - name: Publish to the Maven Central Repository
-      run: mvn -P ossrh,sign -B deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -P ossrh,sign -B deploy -s $GITHUB_WORKSPACE/release-settings.xml
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
