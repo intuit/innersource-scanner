@@ -415,8 +415,8 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
-                                  <keyname>ossrh-gpg-key</keyname>
-                                  <passphraseServerId>ossrh-gpg-key</passphraseServerId>
+                                  <keyname>${env.GPG_KEYID}</keyname>
+                                  <passphraseServerId>${env.GPG_KEYID}</passphraseServerId>
                                   <gpgArguments>
                                       <arg>--pinentry-mode</arg>
                                       <arg>loopback</arg>
