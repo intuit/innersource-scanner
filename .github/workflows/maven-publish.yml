@@ -17,6 +17,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.release.head.ref }}
 
     - name: Set up Java for publishing to Maven Central Repository
       uses: actions/setup-java@v2
@@ -57,12 +59,10 @@ jobs:
     - name: Roll pom version to next patch version
       run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit
 
-    - name: Commit New Snapshot Version (if changed)
-      run: |
-        if [[ `git status --porcelain` ]]; then
-          git config --global user.name 'mmadson'
-          git config --global user.email 'code@matthewmadson.com'
-          git add -A
-          git commit -m "Rolling Maven Version to next snapshot"
-          git push
-        fi  
+    - name: Commit Pom Version Changes Back to main branch
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: Matt Madson
+        author_email: code@matthewmadson.com
+        branch: main
+        message: 'Roll Pom Version'
