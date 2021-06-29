@@ -36,6 +36,7 @@ jobs:
         MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
         GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+        GPG_KEYID: ${{ secrets.OSSRH_GPG_KEY_ID }}
 
     - name: Set up Java for publishing to GitHub Packages
       uses: actions/setup-java@v2
