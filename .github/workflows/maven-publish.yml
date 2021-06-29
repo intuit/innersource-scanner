@@ -17,7 +17,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 8
+
+    - name: Set up Java for publishing to Maven Central Repository
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
+        server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
+
+    - name: Publish to the Maven Central Repository
+      run: mvn -P ossrh,sign -B deploy -s $GITHUB_WORKSPACE/settings.xml
+      env:
+        MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
+
+    - name: Set up Java for publishing to GitHub Packages
       uses: actions/setup-java@v2
       with:
         java-version: '8'
@@ -25,10 +41,7 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn -P github -B deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
