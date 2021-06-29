@@ -1,5 +1,6 @@
 
 [![Build Status](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
+[![Publish Release](https://github.com/intuit/innersource-scanner/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven-publish.yml)
 [![Test Coverage](https://github.com/intuit/innersource-scanner/blob/main/.github/badges/scanner-coverage.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
 
 <!-- Project Logo and Title -->
