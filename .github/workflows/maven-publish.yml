@@ -17,8 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.release.head.ref }}
 
     - name: Set up Java for publishing to Maven Central Repository
       uses: actions/setup-java@v2
@@ -61,8 +59,8 @@ jobs:
 
     - name: Commit Pom Version Changes Back to main branch
       uses: EndBug/add-and-commit@v7
+      env:
+        GITHUB_TOKEN ${{ github.token }}
       with:
-        author_name: Matt Madson
-        author_email: code@matthewmadson.com
         branch: main
         message: 'Roll Pom Version'
