@@ -26,6 +26,9 @@ jobs:
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
+        
+    - name: Set pom versions to version specified by release tag
+      run: mvn versions:set -DnewVersion=${{ github.event.release.tag_name }} versions:commit 
 
     - name: Install GPG Secret Key
       run: cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
@@ -50,3 +53,16 @@ jobs:
       run: mvn -P github -B deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
+        
+    - name: Roll pom version to next patch version
+      run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit
+
+    - name: Commit New Snapshot Version (if changed)
+      run: |
+        if [[ `git status --porcelain` ]]; then
+          git config --global user.name 'mmadson'
+          git config --global user.email 'code@matthewmadson.com'
+          git add -A
+          git commit -m "Rolling Maven Version to next snapshot"
+          git push
+        fi  
