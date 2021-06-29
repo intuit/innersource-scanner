@@ -27,11 +27,15 @@ jobs:
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
 
+    - name: Install GPG Secret Key
+      run: cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+
     - name: Publish to the Maven Central Repository
       run: mvn -P ossrh,sign -B deploy -s $GITHUB_WORKSPACE/release-settings.xml
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
+        GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
     - name: Set up Java for publishing to GitHub Packages
       uses: actions/setup-java@v2
