@@ -1,9 +1,10 @@
 
 [![Build Status](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
+[![Test Coverage](https://github.com/intuit/innersource-scanner/blob/main/.github/badges/scanner-coverage.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
 [![Publish Release](https://github.com/intuit/innersource-scanner/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven-publish.yml)
 [![GitHub Release](https://img.shields.io/github/v/release/intuit/innersource-scanner?include_prereleases&label=GitHub%20Release)](https://github.com/intuit/innersource-scanner/releases)
-[![Maven Release](https://maven-badges.herokuapp.com/maven-central/com.intuit.innersource/innersource-repository-scanner/badge.svg)](https://search.maven.org/artifact/com.intuit.innersource/innersource-repository-scanner)
-[![Test Coverage](https://github.com/intuit/innersource-scanner/blob/main/.github/badges/scanner-coverage.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
+[![Maven Release](https://img.shields.io/maven-central/v/com.intuit.innersource/innersource-repository-scanner?label=Maven%20Release)](https://search.maven.org/artifact/com.intuit.innersource/innersource-repository-scanner)
+[![Download CLI](https://img.shields.io/badge/Download-CLI-orange)](https://search.maven.org/remote_content?g=com.intuit.innersource&a=innersource-repository-scanner&v=LATEST&c=jar-with-dependencies)
 
 <!-- Project Logo and Title -->
 <p align="center">
@@ -126,7 +127,8 @@ multithreading in the Java API to concurrently scan repositories, whereas the CL
 
 #### Download the Runnable Jar CLI
 
-- Download the latest release version of the runnable jar CLI from the Downloads page.
+- Download the latest release version of the runnable jar CLI from either GitHub Packages or [Maven Central](https://search.maven.org/remote_content?g=com.intuit.innersource&a=innersource-repository-scanner&v=LATEST&c=jar-with-dependencies).
+- Rename the downloaded runnable jar to `innersource.jar` for convenience. The examples below will assume this filename.
 
 **NOTE:** Java 1.8+ must be installed in order to execute the runnable jar and follow the examples below.
 
