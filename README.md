@@ -1,6 +1,7 @@
 
 [![Build Status](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
 [![Publish Release](https://github.com/intuit/innersource-scanner/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven-publish.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/intuit/innersource-scanner?include_prereleases&label=GitHub%20Release)](https://github.com/intuit/innersource-scanner/releases)
 [![Maven Release](https://maven-badges.herokuapp.com/maven-central/com.intuit.innersource/innersource-repository-scanner/badge.svg)](https://search.maven.org/artifact/com.intuit.innersource/innersource-repository-scanner)
 [![Test Coverage](https://github.com/intuit/innersource-scanner/blob/main/.github/badges/scanner-coverage.svg)](https://github.com/intuit/innersource-scanner/actions/workflows/maven.yml)
 
