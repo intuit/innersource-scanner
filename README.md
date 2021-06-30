@@ -427,8 +427,6 @@ The default Fixup File Templates can be customized or overridden. See the
 
 #### Install Dependencies
 
-See [CHANGELOG.md](./CHANGELOG.md) for the latest version.
-
 [![mvn dependency coordinates](./.github/assets/images/mvn-dep-coordinates.svg)](https://raw.githubusercontent.com/intuit/innersource-scanner/main/.github/assets/images/mvn-dep-coordinates.svg)
 
 #### Use Java API to Generate InnerSource Readiness Report 
