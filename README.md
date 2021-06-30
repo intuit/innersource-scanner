@@ -310,8 +310,21 @@ After running the report command, you should see a json report output similar to
 ```
 
 The top level property `isRepositoryInnerSourceReady` will be true if the scanned repository is 
-considered InnerSource Ready, and false otherwise. There are quite a few additional details
-included in the report, so you can zoom in on exactly what was missing from the repository.
+considered InnerSource Ready, and false otherwise. 
+
+It's handy to pipe the output of the report command to jq to extract just the information you care about.
+
+Checking if your repository is innersource ready thus becomes:
+
+`java -jar innersource.jar -c=REPORT -r=https://github.com/your/repo -a=your-gh-auth-token | jq .isRepositoryInnerSourceReady`
+
+Which should return the boolean `true` or `false`.
+
+There are quite a few additional details included in the report, so you can zoom in on exactly what was missing from the repository.
+
+For example, if your repository is not InnerSource ready you can see which files were evaluated and which file checks were not satisfied with the following command:
+
+`java -jar innersource.jar -c=REPORT -r=https://github.com/your/repo -a=your-gh-auth-token | jq '[.fileRequirementReports | .[] | select(.isFileRequirementSatisfied == false) | {optionEvaluated, fileChecksReports: .fileChecksReports | .[] | del(.fileChecksEvaluated) | del(.isFileChecksSatisfied) | del(.fileCheckReports[] | select(.isFileCheckSatisfied == true))}]'`
  
 <a id="default-innersource-readiness-spec"></a>
 The [Default InnerSource Readiness Specification](.github/assets/examples/public_github_default.spec.json)
