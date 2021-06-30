@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xml:lang="en-GB" width="50em" height="7em">
+    <style>
+        svg {
+            font-family: monospace;
+            font-size: medium;
+        }
+    </style>
+
+    <text x="0" y="1em">
+        <tspan x="1em" dy="1em">&lt;dependency&gt;</tspan>
+        <tspan x="3em" dy="1em">&lt;groupId&gt;${project.groupId}&lt;/groupId&gt;</tspan>
+        <tspan x="3em" dy="1em">&lt;artifactId&gt;${project.artifactId}&lt;/artifactId&gt;</tspan>
+        <tspan x="3em" dy="1em">&lt;version&gt;${project.version}&lt;/version&gt;</tspan>
+        <tspan x="1em" dy="1em">&lt;/dependency&gt;</tspan>
+    </text>
+    
+</svg>
