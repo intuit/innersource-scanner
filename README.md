@@ -891,4 +891,5 @@ Contributions are welcome, please see the [CONTRIBUTING.md](./CONTRIBUTING.md) f
 
 ## **Support**
 
-- Create an Issue describing your question or concern
+- Please review the guidelines in the [SUPPORT.md](./SUPPORT.md)
+- Then, [create an Issue](https://github.com/intuit/innersource-scanner/issues/new/choose) describing your question or concern
