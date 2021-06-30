@@ -11,7 +11,7 @@
         <tspan x="1em" dy="1em">&lt;dependency&gt;</tspan>
         <tspan x="3em" dy="1em">&lt;groupId&gt;com.intuit.innersource&lt;/groupId&gt;</tspan>
         <tspan x="3em" dy="1em">&lt;artifactId&gt;aggregator&lt;/artifactId&gt;</tspan>
-        <tspan x="3em" dy="1em">&lt;version&gt;0.0.10-SNAPSHOT&lt;/version&gt;</tspan>
+        <tspan x="3em" dy="1em">&lt;version&gt;0.0.10&lt;/version&gt;</tspan>
         <tspan x="1em" dy="1em">&lt;/dependency&gt;</tspan>
     </text>
     
