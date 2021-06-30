@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     xml:lang="en-GB" width="auto" height="7em">
+     xml:lang="en-GB" width="10em" height="7em">
     <style>
         svg {
             font-family: monospace;
@@ -9,8 +9,8 @@
 
     <text x="0" y="1em">
         <tspan x="1em" dy="1em">&lt;dependency&gt;</tspan>
-        <tspan x="5em" dy="1em">&lt;groupId&gt;com.intuit.innersource&lt;/groupId&gt;</tspan>
-        <tspan x="10em" dy="1em">&lt;artifactId&gt;innersource-repository-scanner&lt;/artifactId&gt;</tspan>
+        <tspan x="3em" dy="1em">&lt;groupId&gt;com.intuit.innersource&lt;/groupId&gt;</tspan>
+        <tspan x="3em" dy="1em">&lt;artifactId&gt;innersource-repository-scanner&lt;/artifactId&gt;</tspan>
         <tspan x="3em" dy="1em">&lt;version&gt;0.0.9&lt;/version&gt;</tspan>
         <tspan x="1em" dy="1em">&lt;/dependency&gt;</tspan>
     </text>
