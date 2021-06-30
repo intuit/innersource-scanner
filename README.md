@@ -429,13 +429,7 @@ The default Fixup File Templates can be customized or overridden. See the
 
 See [CHANGELOG.md](./CHANGELOG.md) for the latest version.
 
-```xml
-<dependency>
-    <groupId>com.intuit.innersource</groupId>
-    <artifactId>innersource-repository-scanner</artifactId>
-    <version>0.0.1</version>
-</dependency>
-```
+[![mvn dependency coordinates](./.github/assets/images/mvn-dep-coordinates.svg)](https://raw.githubusercontent.com/intuit/innersource-scanner/main/.github/assets/images/mvn-dep-coordinates.svg)
 
 #### Use Java API to Generate InnerSource Readiness Report 
 
